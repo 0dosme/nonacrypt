@@ -1,0 +1,34 @@
+import type { Metadata } from 'next';
+import { Inter, Space_Grotesk } from 'next/font/google';
+import './globals.css';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-display',
+});
+
+export const metadata: Metadata = {
+  title: 'Nonacrypt',
+  description: 'Architecting the Intelligence That Powers Future Enterprises.',
+  keywords: [
+    'AI Consultancy for Finance',
+    'Data Science services for Healthcare',
+    'Custom Predictive Analytics for Oil and Gas',
+    'Enterprise AI development firm'
+  ]
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+      <body className="bg-slate-950 text-slate-50 font-sans antialiased selection:bg-amber-500/30 selection:text-amber-200" suppressHydrationWarning>
+        {children}
+      </body>
+    </html>
+  );
+}
